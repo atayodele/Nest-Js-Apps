@@ -10,3 +10,22 @@ To start a new/fresh project
         - app.controller.spec.ts
         - app.controller.ts
         - app.service.ts
+To generate a module
+    - nest g module task
+To generate a service
+    - nest g service task --no-spec
+To generate a controller
+    - nest g controller task --no-spec
+
+DATABASE - PG-ADMIN
+    npm i typeorm @nestjs/typeorm pg
+    
+Runing PosgreSQL via DOCKER
+    Install docker on your machine
+    After that, run this on your terminal
+        - docker
+        - docker run --name postgres-nest -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres-task    // -d means it will run in detach mode, postgres after -d is the container name
+        - docker container ls
+        - docker container stop postgres-nest   // to stop the ru container
+        - docker container rm postgres-nest     // to remove a container
+        - 
