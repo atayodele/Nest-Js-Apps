@@ -1,0 +1,12 @@
+npm install -g @nestjs/cli     // install nest js global on your computer
+nest --version              // to know the version of nest runing on ur computer
+nest --help
+nest new task-management        //create a new application
+cd task-management          // move into the new created directory
+npm run start:dev       // to run the new application
+
+To start a new/fresh project
+    - Delete the following default files
+        - app.controller.spec.ts
+        - app.controller.ts
+        - app.service.ts
