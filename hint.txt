@@ -4,6 +4,7 @@ nest --help
 nest new task-management        //create a new application
 cd task-management          // move into the new created directory
 npm run start:dev       // to run the new application
+npm install -g cross-env    //Environment variable
 
 To start a new/fresh project
     - Delete the following default files
@@ -18,8 +19,11 @@ To generate a controller
     - nest g controller task --no-spec
 
 DATABASE - PG-ADMIN
-    npm i typeorm @nestjs/typeorm pg
-    
+    - npm i typeorm @nestjs/typeorm pg
+    - npm i @nestjs/jwt @nestjs/passport passport passport-jwt
+    - npm i @types/passport-jwt
+    - npm i @nestjs/config
+
 Runing PosgreSQL via DOCKER
     Install docker on your machine
     After that, run this on your terminal
