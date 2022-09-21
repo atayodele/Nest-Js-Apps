@@ -6,6 +6,9 @@ cd task-management          // move into the new created directory
 npm run start:dev       // to run the new application
 npm install -g cross-env    //Environment variable
 
+https://www.passwordsgenerators.net/  => for password generator
+
+
 To start a new/fresh project
     - Delete the following default files
         - app.controller.spec.ts
