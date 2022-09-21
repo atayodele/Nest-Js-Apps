@@ -1,8 +1,6 @@
 # compiled output
-graphql-mongo/dist
-graphql-mongo/node_modules
-task-management/dist
-task-management/node_modules
+dist
+node_modules
 
 # Logs
 logs
