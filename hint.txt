@@ -47,13 +47,15 @@ To start a new/fresh project
         - app.controller.ts
         - app.service.ts
     - npm install graphql graphql-tools apollo-server-express @nestjs/graphql
+    - npm install typeorm @nestjs/typeorm mongodb @types/mongodb
+    - npm install uuid
 To generate a module
     - nest g module lesson
     - create a lesson type as a file 
     - create a resolver file for lesson
     - npm run start:dev
     - Goto localhost:3000/graphql on your browser
-    
+
 To generate a service
     - nest g service lesson --no-spec
 To generate a controller
