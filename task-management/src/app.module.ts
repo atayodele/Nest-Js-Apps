@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './modules/auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { configValidationSchema } from './config.schema';
+import 'reflect-metadata';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { configValidationSchema } from './config.schema';
       useFactory: async (configService: ConfigService) => ({
         type: 'postgres',
         autoLoadEntities: true,
+        entities: [__dirname + '/**/*.entity.{js,ts}'],
         synchronize: true,
         host: configService.get('DB_HOST'),
         port: configService.get('DB_PORT'),

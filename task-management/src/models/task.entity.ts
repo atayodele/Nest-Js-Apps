@@ -17,11 +17,11 @@ export class Task {
   @Column()
   status: TaskStatus;
 
-  @CreateDateColumn()
-  createdAt: Date;
+  @CreateDateColumn({ name: 'created_at', default: new Date() })
+  createdAt?: Date;
 
-  @UpdateDateColumn()
-  updatedAt: Date;
+  @UpdateDateColumn({ name: 'updated_at', default: new Date() })
+  updatedAt?: Date;
 
   @ManyToOne((_type) => User, (user) => user.tasks, { eager: false })
   @Exclude({ toPlainOnly: true })
