@@ -61,4 +61,4 @@ To generate a service
 To generate a controller
     - nest g controller lesson --no-spec
 
-
+DOCKER WITH NEST JS USING PRISMA
