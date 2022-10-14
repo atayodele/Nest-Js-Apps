@@ -24,8 +24,8 @@ To generate a controller
 DATABASE - PG-ADMIN
     - npm i typeorm @nestjs/typeorm pg
     - npm i @nestjs/jwt @nestjs/passport passport passport-jwt
-    - npm i @types/passport-jwt
-    - npm i @nestjs/config
+    - npm i @types/passport-jwt --save-dev
+    - npm i @nestjs/config OR yarn add @nestjs/config
 
 Runing PosgreSQL via DOCKER
     Install docker on your machine
@@ -40,7 +40,7 @@ Runing PosgreSQL via DOCKER
 GRAPHQL AND MONGO-DB PROJECT
 nest new graphql-mongo        
 cd graphql-mongo 
-npm run start:dev
+npm run start:dev OR yarn start:dev
 To start a new/fresh project
     - Delete the following default files
         - app.controller.spec.ts
@@ -61,4 +61,44 @@ To generate a service
 To generate a controller
     - nest g controller lesson --no-spec
 
-DOCKER WITH NEST JS USING PRISMA
+DOCKER WITH NEST JS USING ORM PRISMA
+    - docker ps
+    - docker --version
+    - create docker-compose.yml file in ur project
+    - paste the followingcode inside
+        version: '3.8'
+        services:
+            dev-db:
+                image: postgres:13
+                ports:
+                    - 5434:5432
+                environment:
+                    POSTGRES_USER: postgres
+                    POSTGRES_PASSWORD: 123
+                    POSTGRES_DB: nest-api
+                networks:
+                    - freecodecamp
+        networks:
+            freecodecamp:
+
+
+    - Goto terminal, run this command
+        - docker compose up dev-db -d
+        - docker ps
+        - docker compose rm --help
+        
+    - install prisma cli using this command
+        - npm i prisma --save-dev
+        - npm i @prisma/client --save
+        - Run prisma on terminal to general schema file and .env file using
+            - npx prisma init
+            - add ur model to schema.prisma
+            - add ur db connection from docker.compose.yml to .env file to generate migration
+            - npx prisma migrate dev
+            - npx prisma studio     // to view db on browser
+        - nest g module prisma
+        - nest g service prisma --no-spec
+        - make prisma module Global so that it can be access by every other services
+        - npm i --save class-validator class-transformer
+        - npm i --save argon2       // to hash password
+        
